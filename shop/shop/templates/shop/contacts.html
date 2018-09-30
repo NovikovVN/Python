@@ -1,0 +1,33 @@
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; {{ title }} {% endblock %} {% block content %}
+
+<h2>Сотрудничество</h2>
+<p>Мы&nbsp;будем рады ответить на&nbsp;все интересующие Вас вопросы, а&nbsp;также встретиться с&nbsp;Вами у&nbsp;нас в&nbsp;офисе.</p>
+<h3>Главный офис</h3>
+<p><b>Адрес</b>: Казахстан, Алматы, проспект Аль-Фараби, 71<br>
+    <b>Телефон</b>: 322-223-322<br>
+    <b>E-mail</b>: mngmnt@metalgossip.ru</p>
+<p>Если у&nbsp;Вас есть какие-либо вопросы или пожелания, воспользуйтесь формой запроса, и&nbsp;мы&nbsp;ответим Вам в&nbsp;самое ближайшее время.</p>
+<h3>Форма обратной связи</h3>
+<form action="№">
+    <p>Ваши фамилия, имя, отчество:</p>
+    <p><input type="text" placeholder="Иванов Иван Иванович"></p>
+    <p>Ваш e-mail:</p>
+    <p><input type="email" placeholder="mail@example.com"></p>
+    <p>Ваш статус*:</p>
+    <label><input type="checkbox" name="option1" value="customer" checked> покупатель</label>
+    <label><input type="checkbox" name="option2" value="supplier"> поставщик</label>
+    <label><input type="checkbox" name="option3" value="producer"> производитель</label>
+    <p><small>* можно выбрать несколько опций.</small></p>
+    <p>Тема:</p>
+    <p><input type="text" placeholder="Вопрос о продукте"></p>
+    <p>Ваше сообщение:</p>
+    <p><textarea name="text" placeholder="Здравствуйте,"></textarea></p>
+    <p><input type="file"></p>
+    <p><button type="submit">Сохранить</button> <button type="reset">Очистить</button></p>
+</form>
+<div class="map">
+    <h3>Как нас найти</h3>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5ac1b4077dad76b7e26b00a9e485a5ff169d7e220519c1a203d94cd93e0e3322&amp;width=100%25&amp;height=374&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; Каталог {% endblock %} {% block content %}
+
+<h2>Каталог</h2>
+<div class="catalog">
+    {% for link, image, descr, price in product_items %}
+    <div class="catalog_item">
+        <a href="{{ link }}" target="_blank"><img src="{{ image }}" alt="{{ descr }}" title="{{ descr }}"/></a>
+        <p><a href="{{ link }}">{{ descr }}</a></p>
+        <p><b>Цена:</b> {{ price }}&nbsp;р.</p>
+        <p><button id="buy_button">Купить</button></p>
+    </div>
+    {% endfor%}
+</div>
+
+{% endblock %}

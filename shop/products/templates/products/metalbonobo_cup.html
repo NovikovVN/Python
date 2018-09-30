@@ -1,0 +1,22 @@
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; {{ descr}} {% endblock %} {% block content %}
+
+<h2>MetalBonobo Cup</h2>
+<h3 id="product_header">Описание</h3>
+<a href="{{ image }}" target="_blank"><img id="image_product" src="{{ image }}" alt="{{ descr}}" title="{{ descr}}"/></a>
+<p id="product_summary">Фарфоровая кружка с&nbsp;фирменным логотипом в&nbsp;трех цветах.</p>
+<p><b>Цена:</b> {{ price }}&nbsp;р.</p>
+<p><button id="buy_button">Купить</button></p>
+<h3 id="product_header">Характеристики</h3>
+<ul class="product">
+    <li><b>ID&nbsp;товара:</b> 3521482</li>
+    <li><b>Год:</b> 2018</li>
+    <li><b>Общее количество:</b> 53&nbsp;шт.</li>
+    <li><b>Основной цвет:</b> красный, белый, черный</li>
+    <li><b>Размер:</b> 10&times;10&times;5&nbsp;cм</li>
+    <li><b>Покрытие:</b> глазурь</li>
+    <li><b>Дизайнер:</b> Валевска&nbsp;М.</li>
+</ul>
+<h3 id="product_header">Подробнее</h3>
+<p id="product_description">Удобная, ударостойкая кружка в&nbsp;подарок каждому!<br>Благодаря особой прочности фарфора и&nbsp;качественной глазури кружку можно мыть в&nbsp;посудомоечной машине&nbsp;&mdash; даже через несколько лет ежедневного использования она не&nbsp;потеряет блеска и&nbsp;четкости рисунка.</p>
+
+{% endblock %}
