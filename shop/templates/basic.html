@@ -17,15 +17,18 @@
         <div class="site">
             <header class="header">
                 <div>
-                    <a href="/main/"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a>
+                    {% if title == "Главная" %}
+                    <a href="#"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a>
+                    {% else %}
+                    <a href="/main"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a>{% endif %}
                 </div>
                 <nav>
                     <ul class="menu">
                         {% for href, li in menu %}
                         <li>
-                            {% if href %}
-                            <a href="{{ href }}">{{ li|title }}</a> {% else %}
-                            <a class="menu-active" href="#">{{ li|title }}</a> {% endif %}
+                            {% if li == title %}
+                            <a class="menu-active" href="#">{{ li|title }}</a> {% else %}
+                            <a href="{{ href }}">{{ li|title }}</a>{% endif %}
                         </li>
                         {% endfor%}
                     </ul>

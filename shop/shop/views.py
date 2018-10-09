@@ -1,9 +1,14 @@
+from json import load
 from django.shortcuts import render
 
+def get_menu():
+    with open('data/menu_list.json', encoding='utf-8') as file:
+        return load(file).items()
+
 def main(request):
-    menu = (('', 'Главная'), ('/products', 'Каталог'), ('/contacts', 'Контакты'))
-    return render(request, 'shop/index.html', context={'menu': menu, 'title': 'Главная'} )
+    title = 'Главная'
+    return render(request, 'shop/index.html', context={'menu': get_menu(), 'title': title} )
 
 def contacts(request):
-    menu = (('/main', 'Главная'), ('/products', 'Каталог'), ('', 'Контакты'))
-    return render(request, 'shop/contacts.html', context={'menu': menu, 'title': 'Контакты'} )
+    title = 'Контакты'
+    return render(request, 'shop/contacts.html', context={'menu': get_menu(), 'title': title} )
