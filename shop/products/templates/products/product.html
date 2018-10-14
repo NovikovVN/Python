@@ -1,0 +1,18 @@
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; {{ title }} {% endblock %} {% block content %}
+
+<h2>{{ title }}</h2>
+<h3 id="product_header">Описание</h3>
+<a href="{{ image }}" target="_blank"><img id="image_product" src="{{ image }}" alt="{{ title }}" title="{{ title }}"/></a>
+<p id="product_summary"> {{ snippet }} </p>
+<p><b>Цена:</b> {{ price }}&nbsp;р.</p>
+<p><button id="buy_button">Заказать</button></p>
+<h3 id="product_header">Характеристики</h3>
+<ul class="product">
+    {% for id_c, c in characteristics %}
+    <li><b>{{ id_c }}:</b> {{ c }}</li>
+    {% endfor%}
+</ul>
+<h3 id="product_header">Подробнее</h3>
+<p id="product_description"> {{ description }} </p>
+
+{% endblock %}

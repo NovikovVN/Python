@@ -5,42 +5,66 @@ def get_menu():
     with open('data/menu_list.json', encoding='utf-8') as file:
         return load(file).items()
 
-product_items = (
-('/products/1/', '/static/img/scarf_white.png', 'Белый MetalBonobo Scarf', 295),
-('/products/2/', '/static/img/cup_black.png', 'Черная MetalBonobo Cup', 88),
-('/products/3/', '/static/img/tshirt_red.png', 'Красная MetalBonobo T-shirt', 381)
-)
+product_items = ( ('/products/1/',
+                   'MetalBonobo Scarf',
+                   '/static/img/scarf_white.png',
+                   295,
+                   'Атласный шарф с фирменным логотипом в трех цветах.',
+                   'Двустороння печать на шарфах выполнена на высокотехнологичном оборудовании, благодаря чему рисунок и цвета на шарфе выдерживают многократные машинные стирки и даже химчистку. Прокрас ткани произведен заводскими методами, а отшив профессиональными швеями. Атлас не&nbsp;мнется, что позволяет носить шарф в качестве широкого ряда акссесуаров - в виде банданы, чалмы, галстука или пояса.',
+                   (('Артикул', 2646575),
+                    ('Год', 2018),
+                    ('Количество', 276),
+                    ('Стиль', 'унисекс'),
+                    ('Цвет', 'красный, белый, черный'),
+                    ('Размер', '110×30 cм'),
+                    ('Ткань', 'атлас: одна сторона блестящая, другая матовая'),
+                    ('Дизайнер', 'Валевска М.'),
+                    ('Возраст', '12+'))),
+
+                  ('/products/2/',
+                   'MetalBonobo Cup',
+                   '/static/img/cup_black.png',
+                   88,
+                   'Фарфоровая кружка с фирменным логотипом в трех цветах.',
+                   'Удобная, ударостойкая кружка в подарок каждому! Благодаря особой прочности фарфора и качественной глазури кружку можно мыть в посудомоечной машине - даже через несколько лет ежедневного использования она не потеряет блеска и четкости рисунка.',
+                   (('Артикул', 3521482),
+                    ('Год', 2018),
+                    ('Количество', 53),
+                    ('Цвет', 'красный, белый, черный'),
+                    ('Размер', '10×10×5 cм'),
+                    ('Покрытие', 'глазурь'),
+                    ('Дизайнер', 'Валевска М.'))),
+
+                  ('/products/3/',
+                   'MetalBonobo T-shirt',
+                   '/static/img/tshirt_red.png',
+                   381,
+                   'Хлопковая футболка с фирменным логотипом в трех цветах.',
+                   'Всесезонная футболка прямого покроя из стопроцентного хлопка с высоким качеством печати. Барабанная сушка запрещена, рекомендуется бережная стирка при 30-ти градусах.',
+                   (('Артикул', 7895123),
+                    ('Год', 2018),
+                    ('Количество', 87),
+                    ('Стиль', 'унисекс'),
+                    ('Цвет', 'красный, белый, черный'),
+                    ('Размер', 'S-XL'),
+                    ('Ткань', 'натуральный хлопок'),
+                    ('Дизайнер', 'Валевска М.'),
+                    ('Возраст', '12+'))))
 
 def products(request, pk=None):
-    if not(pk):
+    if pk in (1, 2, 3):
+        return render(request, 'products/product.html',
+                      context={'menu': get_menu(),
+                               'title': product_items[pk-1][1],
+                               'image': product_items[pk-1][2],
+                               'price': product_items[pk-1][3],
+                               'snippet': product_items[pk-1][4],
+                               'description': product_items[pk-1][5],
+                               'characteristics': product_items[pk-1][6]} )
+
+    else:
         title = 'Каталог'
         return render(request, 'products/catalog.html',
                       context={'menu': get_menu(),
                                'title': title,
-                               'product_items': product_items[:][:3]} )
-    elif pk == 1:
-        title = 'MetalBonobo Scarf'
-        return render(request, 'products/metalbonobo_scarf.html',
-                      context={'menu': get_menu(),
-                               'title': title,
-                               'image': product_items[0][1],
-                               'descr': product_items[0][2],
-                               'price': product_items[0][3]} )
-
-    elif pk == 2:
-        title = 'MetalBonobo Cup'
-        return render(request, 'products/metalbonobo_cup.html',
-                      context={'menu': get_menu(),
-                               'title': title,
-                               'image': product_items[1][1],
-                               'descr': product_items[1][2],
-                               'price': product_items[1][3]} )
-
-    elif pk == 3:
-        title = 'MetalBonobo T-shirt'
-        return render(request, 'products/metalbonobo_tshirt.html',
-                      context={'menu': get_menu(),
-                               'title': title,
-                               'image': product_items[2][1],
-                               'descr': product_items[2][2],
-                               'price': product_items[2][3]} )
+                               'product_items': [product_items[k][:4] for k in (0, 1, 2)]} )

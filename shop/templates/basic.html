@@ -15,11 +15,11 @@
 <body>
     <div class="container">
         <div class="site">
+           <div class="user"><img src="{{ user.avatar.value.url }}" alt="Аватар пользователя">{{ user.username|lower }}</div>
             <header class="header">
                 <div>
                     {% if title == "Главная" %}
-                    <a href="#"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a>
-                    {% else %}
+                    <a href="#"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a> {% else %}
                     <a href="/main"><img src="{% static 'img/logo.png' %}" alt="Логотип MetalGossipStore"/></a>{% endif %}
                 </div>
                 <nav>
