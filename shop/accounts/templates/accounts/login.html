@@ -1,0 +1,14 @@
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; {{ title }} {% endblock %} {% block content %}
+
+<h2>Аутентификация</h2>
+<form action="/accounts/" method="post">
+    {% csrf_token %}
+    <p>Имя пользователя:</p>
+    <p><input class="login" name="username" type="text"></p>
+    <p>Пароль:</p>
+    <p><input name="password" type="password"></p>
+    <input type="submit" value="Отправить">
+</form>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At minima voluptates vero fugiat praesentium consectetur, hic voluptate porro nemo alias dignissimos ratione provident aut quia omnis? Iste est accusamus at vero, sapiente enim doloremque neque totam? Modi laboriosam quas commodi voluptate quidem cupiditate ut temporibus. Odit laboriosam natus odio dolorum, laborum, unde dolorem eaque esse mollitia error et saepe nam sed earum magnam ea est quam necessitatibus at id pariatur asperiores. Temporibus nulla veritatis suscipit voluptate perspiciatis repudiandae. Sequi, explicabo temporibus dolor rem, molestias modi hic sapiente nihil veritatis repellat aliquam itaque officia pariatur porro eum totam deleniti atque rerum delectus natus facere, expedita doloribus et! Tenetur animi quaerat ad, et veniam, ea tempora voluptatum molestias voluptates nam voluptate corporis doloremque possimus repellendus distinctio, illo est magni quis quae expedita voluptas odio? Sint, quod eos dignissimos ullam, eligendi natus dolor ab libero non repudiandae voluptate quasi adipisci, iusto quidem ratione.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, inventore, tempore esse repellendus dolore aliquid dignissimos pariatur sunt deleniti cupiditate, similique enim quia voluptatibus accusantium aspernatur optio quisquam, provident repudiandae in iste natus! Possimus pariatur ex repudiandae mollitia saepe sint voluptates, eum magnam accusantium odit blanditiis rerum et facilis architecto aspernatur veritatis facere, repellat! Sunt iusto, temporibus eum natus? Necessitatibus, reiciendis sint odit minima harum natus illum similique blanditiis! Voluptatum rerum illo placeat a veniam illum amet quae aspernatur earum id eius eos beatae cupiditate corrupti, repudiandae commodi, voluptatibus assumenda obcaecati iure, laudantium aperiam nisi. Aperiam atque eveniet suscipit, est aspernatur consequatur officiis quam eligendi, quos nihil. Ducimus officiis possimus, iste earum quo veniam repudiandae maxime debitis cupiditate. Voluptates atque tempore nulla odio consectetur omnis dicta, eaque molestiae? Minima repellendus nesciunt sint tempora explicabo natus obcaecati totam quo quidem? Dolores libero a explicabo quos enim neque minima dignissimos nam omnis?</p>
+{% endblock %}

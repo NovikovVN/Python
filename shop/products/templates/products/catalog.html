@@ -2,11 +2,12 @@
 
 <h2>Каталог</h2>
 <div class="catalog">
-    {% for link, title, image, price in product_items %}
+    {% for i in product_items %}
     <div class="catalog_item">
-        <a href="{{ link }}" target="_blank"><img src="{{ image }}" alt="{{ title }}" title="{{ title }}"/></a>
-        <p><a href="{{ link }}">{{ title }}</a></p>
-        <p><b>Цена:</b> {{ price }}&nbsp;р.</p>
+        <h3>{{i.category}}</h3>
+        <a href="../media/{{ i.image.value }}" target="_blank"><img src="../media/{{ i.image.value }}" alt="{{ i.title }}" title="{{ i.title }}"/></a>
+        <p><a href="{{i.pk}}">{{ i.title }}</a></p>
+        <p><b>Цена:</b> {{ i.price }}&nbsp;р.</p>
         <p><button id="buy_button">Заказать</button></p>
     </div>
     {% endfor%}

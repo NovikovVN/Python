@@ -9,7 +9,6 @@ class Category(models.Model):
                                null=True,
                                blank=True)
 
-
     modified = models.DateTimeField(auto_now=True)
 
     created = models.DateTimeField(auto_now_add=True)
@@ -50,15 +49,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class Cup(Product):
-    pass
-
-
-class Scarf(Product):
-    pass
-
-
-class Tshirt(Product):
-    pass

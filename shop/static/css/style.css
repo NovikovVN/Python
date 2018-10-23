@@ -112,6 +112,7 @@ h3 {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="file"],
 textarea {
     font-family: Times New Roman;
@@ -122,21 +123,21 @@ textarea {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="file"] {
     height: 24px;
     width: 320px;
 }
 
-input[type="text"],
-input[type="file"],
-textarea:focus {
-    text-transform: capitalize;
-}
-
+.login:focus,
+input[type="password"]:focus,
 input[type="email"]:focus {
     background: #ffcccc;
     outline-color: red;
-    color: darkred;
+    color: darkred
+}
+
+input[type="email"]:focus {
     text-transform: lowercase;
 }
 
@@ -146,6 +147,7 @@ textarea {
 }
 
 #buy_button,
+input[type="submit"],
 button[type="submit"],
 button[type="reset"] {
     border: 2px solid;
@@ -158,6 +160,7 @@ button[type="reset"] {
 }
 
 #buy_button:hover,
+input[type="submit"]:hover,
 button[type="submit"]:hover,
 button[type="reset"]:hover {
     color: whitesmoke;
@@ -167,6 +170,7 @@ button[type="reset"]:hover {
     background-color: darkred;
 }
 
+input[type="submit"]:hover,
 button[type="submit"]:hover {
     background-color: darkgreen;
 }
