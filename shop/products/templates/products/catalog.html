@@ -13,4 +13,16 @@
     {% endfor%}
 </div>
 
+<div class="paginator">
+    {% if page_obj.has_previous %}
+    <a href="?page={{ product_items.previous_page_number }}"> Previous </a> 
+    {% endif %} 
+    {% for page in page_obj.paginator.page_range %}
+    <a href="?page={{ page }}"> {{ page }} </a> 
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <a href="?page={{ product_items.next_page_number }}"> Next </a> 
+    {% endif %}
+</div>
+
 {% endblock %}

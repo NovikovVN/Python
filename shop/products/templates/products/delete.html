@@ -1,10 +1,10 @@
-{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; {{ title }} {% endblock %} {% block content %}
+{% extends 'basic.html' %} {% block title %} MetalGossipStore&nbsp;&mdash; Удалить {{ title }} {% endblock %} {% block content %}
 
-<h2>{{ title }}?</h2>
+<h2>Удалить{{ title }}?</h2>
 <form action="" method="post">
     {% csrf_token %} {% for err in form.not_field_errors %} {% endfor %} {% for field in form %}
     <p> {{ field.label }}:</p>
     <p>{{ field }}{% for err in field.errors %} </p> <small>*&nbsp{{ err|lower }}</small> {% endfor %} {% endfor %}
-    <p><button type="submit">Сохранить</button></p>
+    <p><button type="submit">Удалить</button></p>
 </form>
 {% endblock %}
